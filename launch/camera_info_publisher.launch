@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="file_name" default="/home/amsl/ros_catkin_ws/src/camera_info_publisher/camera_info/camera.yaml"/>
+	<arg name="frame_id" default="front_camera/optical_frame"/>
+	
+	<node pkg="camera_info_publisher" type="camera_info_publisher.py" name="camera_info_pub">
+		<param name="FILE_NAME" value="$(arg file_name)"/>
+		<param name="FRAME_ID" value="$(arg frame_id)"/>
+	</node>
+</launch>
