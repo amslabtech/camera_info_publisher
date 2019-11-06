@@ -6,8 +6,6 @@ import sys
 
 def CameraInfo_Loader(file_name):
     
-    #with open(file_name, "r") as f:
-    #    calib_data = yaml.load(f)
     try:
         with open(file_name, "r") as f:
             calib_data = yaml.load(f)
@@ -27,17 +25,6 @@ def CameraInfo_Loader(file_name):
         print("Can't open "+file_name)
         print("############################")
         rospy.signal_shutdown("file_open_error")
-
-    #msg = CameraInfo()
-    #msg.width = calib_data["image_width"]
-    #msg.height = calib_data["image_height"]
-    #msg.K = calib_data["camera_matrix"]["data"]
-    #msg.D = calib_data["distortion_coefficients"]["data"]
-    #msg.R = calib_data["rectification_matrix"]["data"]
-    #msg.P = calib_data["projection_matrix"]["data"]
-    #msg.distortion_model = calib_data["distortion_model"]
-    
-    #return msg
 
 if __name__ == "__main__":
     
